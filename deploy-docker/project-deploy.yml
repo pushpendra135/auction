@@ -1,0 +1,8 @@
+---
+- name: Pull docker image of project
+  hosts: all
+  tasks:
+    - name: Pull image
+      docker_image:
+        name: sahoosubhodeep/auction_web
+        source: pull

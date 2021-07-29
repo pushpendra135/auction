@@ -1,0 +1,43 @@
+pipeline {
+    environment{
+        imageName = ' '
+    }
+    agent any
+
+    stages {
+        stage('Git pull') {
+            steps {
+                git branch: 'master', url: 'https://github.com/SubhodeepSahoo/auction_web'
+            }
+        }
+        stage('Docker Build to Image') {
+            steps {
+                script {
+                    imageName = docker.build 'sahoosubhodeep/auction_web'
+                }
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('', 'docker-jenkins'){
+                        imageName.push()
+                    }
+                }
+            }
+        }
+        stage('Build Django Project') {
+            steps {
+                script {
+                    sh "docker-compose up"
+                    }
+                }
+            }
+        }
+        stage('Ansible pull docker image') {
+            steps {
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'deploy-docker/inventory', playbook: 'deploy-docker/project-deploy.yml', sudoUser: null
+            }
+        }
+    }
+}

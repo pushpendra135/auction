@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Placement</title>
+    {% load static %}
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>-->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static "css/mystylesheet.css" %}"/>
+  </head>
+  <body>
+  <!--
+    <div id="main">
+      <div id="app"></div>
+    </div>
+  -->
+    <div class="row hhead">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header  col-lg-9">
+          <div class="tt"> AuctionBID </div>
+        </div>
+        <div class="navbar-collapse collapse ">
+          <ul class="nav nav-tabs nav-justified nav_bor">
+              <li><a href="#"> About Us </a></li>
+              <li><a href="#"> Reach Us </a></li>
+          </ul>
+        </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="middle">
+				<div class="row">
+          <div class="col-lg-12">
+						<h3> Welcome to <span style="color:#4DED30; font-size:30px"> AuctionBID </span> </h3>
+					</div>
+          <div class="col-lg-4 my_box">
+            <img src="{% static "images/org.jpg" %}" class="img-responsive">
+            <div class="adver">
+              <p> <span style="color:#444444;"> Tournament Organizer </span> </p>
+              <form class="form-horizontal" name="myform">
+                    <div class="col-lg-6">
+          	        		<div class="customDiv">
+          	            		<a class="btn btn-danger btn-block" href="/user"><b> Register </b> </a>
+          	        		</div>
+                    </div>
+                    <div class="col-lg-6">
+          	        		<div class="customDiv">
+          	            		<a class="btn btn-primary btn-block" href="/login"><b> Login </b> </a>
+          	        		</div>
+                    </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 my_box">
+            <img src="{% static "images/teams.jpg" %}" class="img-responsive">
+            <div class="adver">
+              <p> <span style="color:#444444;"> Team Owner </span> </p>
+              <form class="form-horizontal" name="myform">
+                    <div class="col-lg-6">
+          	        		<div class="customDiv">
+          	            		<button type="submit" class="btn btn-danger btn-block" onclick=""><b> Register </b></button>
+          	        		</div>
+                    </div>
+                    <div class="col-lg-6">
+          	        		<div class="customDiv">
+          	            		<a class="btn btn-primary btn-block" href="/teamlogin"><b> Login </b> </a>
+          	        		</div>
+                    </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    <script src="{% static "frontend/main.js" %}"></script>
+  </body>
+</html>
